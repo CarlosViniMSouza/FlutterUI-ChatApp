@@ -1,7 +1,4 @@
-git init
 git add -A
-git commit -m "Project Started"
-git branch -M master
-git remote add origin https://github.com/CarlosViniMSouza/FlutterUI-ChatApp.git
-git push -u origin master
+git commit -m "Next Topic: How to Add the Search Bar"
+git push
 git status
