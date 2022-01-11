@@ -1,0 +1,4 @@
+package Prop
+
+class Properties {
+}
