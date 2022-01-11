@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:chat_app/screens/conversations.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,13 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  TextEditingController _searchController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +61,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Icon(Icons.edit)
               ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              width: double.infinity,
+              height: 40,
+              decoration: BoxDecoration(
+                  color: Color(0xFFe9eaec),
+                  borderRadius: BorderRadius.circular(15)),
+              child: TextField(
+                cursorColor: Color(0xFF000000),
+                controller: _searchController,
+                decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Color(0xFF000000).withOpacity(0.5),
+                    ),
+                    hintText: "Search",
+                    border: InputBorder.none),
+              ),
             ),
           ],
         ),
